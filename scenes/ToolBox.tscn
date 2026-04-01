@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://djaq2dwssr5b0"]
+
+[ext_resource type="Script" uid="uid://c28jc74awb1ct" path="res://scripts/ToolBox.gd" id="1_tkybt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6j6du"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tkybt"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wq5xc"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_rpv0v"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_histy"]
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_qtxx5"]
+
+[node name="ToolBox" type="Node3D" unique_id=208955292]
+script = ExtResource("1_tkybt")
+
+[node name="Tool1" type="MeshInstance3D" parent="." unique_id=194219995]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("BoxMesh_6j6du")
+
+[node name="Tool2" type="MeshInstance3D" parent="." unique_id=980293274]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_tkybt")
+
+[node name="Tool3" type="MeshInstance3D" parent="." unique_id=1706509106]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
+mesh = SubResource("CylinderMesh_wq5xc")
+
+[node name="Tool4" type="MeshInstance3D" parent="." unique_id=2058548700]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
+mesh = SubResource("SphereMesh_rpv0v")
+
+[node name="Tool5" type="MeshInstance3D" parent="." unique_id=946425967]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
+mesh = SubResource("TorusMesh_histy")
+
+[node name="Tool6" type="MeshInstance3D" parent="." unique_id=874475549]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
+mesh = SubResource("TubeTrailMesh_qtxx5")

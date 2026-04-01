@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bdo4fr5vuj8lj"]
+
+[ext_resource type="Script" uid="uid://esojaifw8etl" path="res://scripts/player.gd" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://djaq2dwssr5b0" path="res://scenes/ToolBox.tscn" id="2_rvslj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qnwvq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qnwvq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnwvq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_elqb8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvslj"]
+albedo_color = Color(0.15686275, 1, 0.50980395, 1)
+
+[node name="Main" type="Node3D" unique_id=1263115121]
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=734735450]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.4246235, 0, 5.917898)
+script = ExtResource("1_elqb8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=2084846942]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_qnwvq")
+
+[node name="ToolSocket" type="Node3D" parent="Player" unique_id=19862198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14531898, 0, -0.5707841)
+
+[node name="ToolBox" parent="Player/ToolSocket" unique_id=208955292 instance=ExtResource("2_rvslj")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1132722825]
+transform = Transform3D(1, 0, 0, 0, 0.25203553, 0.96771806, 0, -0.96771806, 0.25203553, 10.279777, 14.995248, 14.438553)
+fov = 34.9
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1711134269]
+transform = Transform3D(25, 0, 0, 0, 1, 0, 0, 0, 25, 10, -1.51, 10)
+mesh = SubResource("BoxMesh_qnwvq")
+surface_material_override/0 = SubResource("StandardMaterial3D_qnwvq")
+
+[node name="GressFloor" type="MeshInstance3D" parent="." unique_id=1515124611]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 10, -1.5, 10)
+mesh = SubResource("BoxMesh_elqb8")
+surface_material_override/0 = SubResource("StandardMaterial3D_rvslj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1103831565]
+transform = Transform3D(0.5929309, -0.6005015, 0.53649884, 0.33527267, 0.7898529, 0.5135413, -0.73213744, -0.12462113, 0.6696599, 15.771476, 8.385778, 15.343276)
+light_color = Color(0.76862746, 0.99607843, 0.7921569, 1)
